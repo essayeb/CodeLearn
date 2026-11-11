@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b16">
+  <meta name="description" content="CodeLearn — an interactive programming learning platform by Rayen Essayeb.">
+  <title>CodeLearn — Learn to build</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="dashboard"><span class="brand-mark">&lt;/&gt;</span><span>Code<span class="brand-accent">Learn</span></span></a>
+      <div class="sidebar-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-link active" data-page="dashboard"><span>◫</span> Overview</button>
+        <button class="nav-link" data-page="courses"><span>▤</span> Explore courses</button>
+        <button class="nav-link" data-page="playground"><span>⌘</span> Playground</button>
+        <button class="nav-link" data-page="exercises"><span>◇</span> Practice</button>
+        <button class="nav-link" data-page="profile"><span>◎</span> My progress</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-promo">
+          <div class="promo-icon">✦</div>
+          <strong>Keep your momentum</strong>
+          <p>Small steps every day lead to big things.</p>
+          <button class="text-button" data-page="courses">Find your next lesson <span>→</span></button>
+        </div>
+        <div class="user-mini"><div class="avatar">RE</div><div><strong>Rayen Essayeb</strong><small>Independent learner</small></div><button class="icon-button" data-action="backend" aria-label="Account options">···</button></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menuToggle" aria-label="Toggle navigation">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <b id="breadcrumbCurrent">Overview</b></div>
+        <div class="topbar-actions"><span class="status-dot"></span><span class="saved-label">Progress saved locally</span><button class="icon-button notification-btn" data-action="backend" aria-label="Notifications">♧</button><div class="avatar avatar-small">RE</div></div>
+      </header>
+
+      <div class="content" id="appContent">
+        <section class="page active" id="page-dashboard">
+          <div class="welcome-row">
+            <div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR LEARNING SPACE</div><h1>Good evening, Rayen <span class="wave">✦</span></h1><p class="muted">Every expert was once a beginner. Ready to build something?</p></div>
+            <button class="button button-primary" data-page="courses">Explore learning paths <span>↗</span></button>
+          </div>
+          <div class="hero-card">
+            <div class="hero-copy"><div class="hero-tag"><span class="live-dot"></span> YOUR NEXT MILESTONE</div><h2>Turn curiosity<br>into <span>capability.</span></h2><p>Learn the fundamentals, write real code, and make progress one lesson at a time.</p><button class="button button-light" data-action="continue">Continue learning <span>→</span></button></div>
+            <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="code-window"><div class="window-dots"><i></i><i></i><i></i><span>hello_world.js</span></div><div class="code-lines"><span><em>01</em> <b>const</b> future = <i>"yours"</i>;</span><span><em>02</em></span><span><em>03</em> <b>function</b> <strong>build</strong>() {</span><span><em>04</em> &nbsp; return <i>"something great"</i>;</span><span><em>05</em> }</span><span><em>06</em></span><span><em>07</em> <strong>build</strong>(); <span class="cursor"></span></span></div></div><div class="floating-chip chip-top">✧ &nbsp; Learn by doing</div><div class="floating-chip chip-bottom"><span>↗</span> 01 — 05</div></div>
+          </div>
+          <div class="stats-grid">
+            <article class="stat-card"><div class="stat-top"><span>Learning progress</span><span class="stat-icon purple">◉</span></div><div class="stat-value" id="statProgress">0%</div><div class="progress-track"><div class="progress-fill" id="overallBar"></div></div><small>Across all learning paths</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Completed lessons</span><span class="stat-icon cyan">✓</span></div><div class="stat-value" id="statLessons">0</div><small>Keep collecting milestones</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Exercises completed</span><span class="stat-icon orange">⌘</span></div><div class="stat-value" id="statExercises">0</div><small>Practice makes progress</small></article>
+            <article class="stat-card"><div class="stat-top"><span>Quiz best score</span><span class="stat-icon green">✧</span></div><div class="stat-value" id="statQuiz">—</div><small>Your highest quiz result</small></article>
+          </div>
+          <div class="section-heading"><div><div class="eyebrow">PICK UP WHERE YOU LEFT OFF</div><h2>Continue your journey</h2></div><button class="subtle-link" data-page="courses">All courses <span>→</span></button></div>
+          <div class="course-grid compact" id="dashboardCourses"></div>
+          <div class="lower-grid"><section class="panel"><div class="panel-heading"><div><h3>Recent activity</h3><p>Your latest learning moments</p></div><span class="panel-symbol">◷</span></div><div id="activityList" class="activity-list"></div></section><section class="panel goal-panel"><div class="panel-heading"><div><h3>Weekly learning goal</h3><p>Build a consistent learning habit</p></div><span class="panel-symbol">✦</span></div><div class="goal-number"><strong id="weeklyCount">0</strong><span>/ 5 lessons</span></div><div class="goal-track"><div id="weeklyBar"></div></div><p class="goal-note">Complete five lessons this week to reach your goal.</p><button class="subtle-link" data-page="courses">Choose a lesson →</button></section></div>
+        </section>
+
+        <section class="page" id="page-courses">
+          <div class="page-heading"><div><div class="eyebrow">THE KNOWLEDGE LIBRARY</div><h1>Explore courses</h1><p class="muted">Structured paths designed to take you from curious to confident.</p></div><div class="course-count"><strong id="courseCount">05</strong><span>learning paths</span></div></div>
+          <div class="toolbar"><label class="search-box"><span>⌕</span><input id="courseSearch" type="search" placeholder="Search courses, topics..." aria-label="Search courses"></label><div class="filter-group" id="courseFilters"><button class="filter-chip selected" data-filter="All">All paths</button><button class="filter-chip" data-filter="Web">Web development</button><button class="filter-chip" data-filter="Programming">Programming</button><button class="filter-chip" data-filter="Core">Core concepts</button></div></div>
+          <div class="course-grid" id="allCourses"></div>
+        </section>
+
+        <section class="page" id="page-lesson">
+          <button class="back-link" data-page="courses">← Back to courses</button>
+          <div class="lesson-layout"><article class="lesson-main"><div class="eyebrow" id="lessonCourseLabel">LEARNING PATH</div><h1 id="lessonTitle">Lesson title</h1><p class="muted" id="lessonIntro"></p><div class="lesson-progress"><div><span>COURSE PROGRESS</span><b id="lessonProgressText">0%</b></div><div class="progress-track"><div class="progress-fill" id="lessonProgressBar"></div></div></div><div id="lessonBody" class="lesson-body"></div><div class="lesson-actions"><button class="button button-secondary" id="prevLesson">← Previous</button><button class="button button-primary" id="completeLesson">Mark as completed ✓</button><button class="button button-secondary" id="nextLesson">Next lesson →</button></div></article><aside class="lesson-sidebar panel"><h3>Course contents</h3><div id="lessonOutline"></div></aside></div>
+        </section>
+
+        <section class="page" id="page-playground">
+          <div class="page-heading"><div><div class="eyebrow">EXPERIMENT • CREATE • LEARN</div><h1>Coding playground</h1><p class="muted">Write code, run it, and see what happens. Your experiments stay in this browser.</p></div><span class="editor-badge"><span class="live-dot"></span> LIVE PREVIEW</span></div>
+          <div class="playground-toolbar"><div class="playground-tabs"><button class="editor-tab active" data-editor="html">index.html</button><button class="editor-tab" data-editor="css">styles.css</button><button class="editor-tab" data-editor="js">script.js</button></div><div class="editor-actions"><button class="button button-secondary button-sm" id="resetCode">↺ Reset</button><button class="button button-primary button-sm" id="runCode">▶ Run code</button></div></div>
+          <div class="playground-grid"><div class="editor-panel"><div class="editor-head"><span><i class="editor-dot"></i> <b id="editorFilename">index.html</b></span><span>HTML / CSS / JS</span></div><textarea id="codeEditor" spellcheck="false" aria-label="Code editor"></textarea><div class="editor-foot"><span>● &nbsp; Ready to run</span><span>Vanilla JavaScript</span></div></div><div class="preview-panel"><div class="preview-head"><span>Preview</span><button class="icon-button" id="refreshPreview" aria-label="Refresh preview">↻</button></div><iframe id="previewFrame" title="Code preview" sandbox="allow-scripts"></iframe></div></div>
+          <p class="playground-tip"><span>✦</span> Tip: Try changing the heading, adjusting the CSS color, or adding a button click interaction.</p>
+        </section>
+
+        <section class="page" id="page-exercises">
+          <div class="page-heading"><div><div class="eyebrow">PRACTICE MAKES PROGRESS</div><h1>Practice challenges</h1><p class="muted">Apply what you've learned with short, focused coding tasks.</p></div><span class="practice-total"><strong id="practiceTotal">0</strong> completed</span></div>
+          <div class="exercise-filters"><button class="filter-chip selected" data-level="All">All levels</button><button class="filter-chip" data-level="Beginner">Beginner</button><button class="filter-chip" data-level="Intermediate">Intermediate</button></div>
+          <div class="exercise-list" id="exerciseList"></div>
+        </section>
+
+        <section class="page" id="page-profile">
+          <div class="page-heading"><div><div class="eyebrow">YOUR PERSONAL SPACE</div><h1>My progress</h1><p class="muted">A snapshot of the skills and milestones you're building.</p></div><button class="button button-secondary" data-action="export">↓ Export progress</button></div>
+          <div class="profile-hero panel"><div class="avatar avatar-large">RE</div><div class="profile-info"><h2>Rayen Essayeb</h2><p>Independent learner · CodeLearn 2026</p><span class="profile-tag">✦ Future developer</span></div><button class="button button-secondary button-sm" data-action="backend">Edit profile</button></div>
+          <div class="stats-grid profile-stats"><article class="stat-card"><span class="muted">Lessons completed</span><div class="stat-value" id="profileLessons">0</div></article><article class="stat-card"><span class="muted">Exercises completed</span><div class="stat-value" id="profileExercises">0</div></article><article class="stat-card"><span class="muted">Courses started</span><div class="stat-value" id="profileStarted">0</div></article><article class="stat-card"><span class="muted">Best quiz score</span><div class="stat-value" id="profileQuiz">—</div></article></div>
+          <section class="panel"><div class="panel-heading"><div><h3>Your learning paths</h3><p>Progress is stored locally on this device</p></div></div><div id="profileCourses" class="profile-course-list"></div></section>
+          <div class="danger-zone"><div><strong>Reset local progress</strong><p>This removes completed lessons, exercise results, and quiz scores from this browser.</p></div><button class="button button-danger button-sm" id="resetProgress">Reset progress</button></div>
+        </section>
+      </div>
+      <footer class="footer"><span>© 2026 CodeLearn · A learning project by <b>Rayen Essayeb</b></span><span>Built for curious minds <span class="footer-heart">✦</span></span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><button class="modal-close icon-button" id="closeModal" aria-label="Close">×</button><div class="modal-icon">✦</div><div class="eyebrow">COMING SOON</div><h2 id="modalTitle">Feature under development</h2><p id="modalMessage">This feature is currently under development. CodeLearn has not been officially launched yet. Backend integration is coming soon.</p><button class="button button-primary" id="modalOk">Got it</button></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

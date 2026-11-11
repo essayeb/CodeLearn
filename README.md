@@ -4,11 +4,11 @@
 **Year:** 2026  
 **Project type:** Front-end educational web application
 
-## 1. Concept
+##  Concept
 
 CodeLearn is a responsive learning interface designed to help beginners explore programming fundamentals through structured learning paths, concise lessons, coding practice, and a browser-based playground. It is a portfolio project demonstrating front-end development, UI design, state management, and interactive JavaScript.
 
-## 2. Features
+##  Features
 
 - Personalized dashboard with lesson, exercise, and progress statistics.
 - Five learning paths: HTML & CSS, JavaScript, Python, SQL, and Algorithms & Problem Solving.
@@ -21,7 +21,7 @@ CodeLearn is a responsive learning interface designed to help beginners explore 
 - Responsive dark interface with mobile navigation.
 - Clear “under development” modal for account/backend-dependent features.
 
-## 3. Technologies
+##  Technologies
 
 - HTML5 for semantic structure.
 - CSS3 for responsive layout, design system, and transitions.
@@ -32,24 +32,7 @@ CodeLearn is a responsive learning interface designed to help beginners explore 
 
 No framework, package manager, backend, or database is required.
 
-## 4. Installation and launch
-
-### Option A — Open directly
-
-1. Extract `CodeLearn_Rayen_Essayeb.zip`.
-2. Open the `CodeLearn` folder.
-3. Double-click `index.html` or open it in a modern browser.
-
-### Option B — XAMPP Lite
-
-1. Extract the project.
-2. Copy the `CodeLearn` folder into your XAMPP Lite web root (the `www` directory in this setup).
-3. Start Apache from the XAMPP control panel.
-4. Visit `http://localhost/CodeLearn/`.
-
-There is no PHP or MySQL dependency in this version.
-
-## 5. Project architecture
+##  Project architecture
 
 ```text
 CodeLearn/
@@ -71,11 +54,11 @@ The application stores a compact object under the `codelearn_rayen_v1` localStor
 
 The data is browser/device-specific. Clearing browser site data or using another browser/device will not transfer this progress. The current release does not implement accounts, authentication, cloud synchronization, or a global leaderboard.
 
-## 6. Run and validate the playground
+##  Run and validate the playground
 
 Open **Playground**, edit the HTML, CSS, or JavaScript tab, then select **Run code**. The output is rendered in a sandboxed iframe. Reset restores the initial sample. The preview is intended for learning snippets, not for hosting untrusted production code.
 
-## 7. Limitations and future improvements
+##  Limitations and future improvements
 
 Potential next iterations:
 
@@ -87,6 +70,6 @@ Potential next iterations:
 - Add instructor/admin tools and a global leaderboard only after server-side validation is implemented.
 - Add automated unit and browser tests.
 
-## 8. Academic and portfolio note
+##  Academic and portfolio note
 
 CodeLearn is a front-end prototype created to demonstrate web development skills and product thinking. Backend-dependent controls intentionally show an under-development notice. No real user accounts or online services are represented as operational.
